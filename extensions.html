@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Walkthrough Guide</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="no-sidebar.html">Getting Started</a></li>
+						<li><a href="walk1.html">Walkthrough 1</a></li>
+						<li><a href="walk2.html">Walkthrough 2</a></li>
+						<li><a href="extensions.html">Extensions</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					<h2>Face API</h2>
+					<div class="container">
+					<div class="12u">
+					<p>While the Computer Vision API can provide essential data about faces in images, such as age, gender, and face dimensions in the image, the Face API can be used to provide more detailed data. Below is an example of Face API implementation.</p>
+					<p>Image being used for this example:<br/>
+					<img src="https://petapixel.com/assets/uploads/2013/01/obamaportrait2.jpg" style="width:15%;"></p>
+					</div></div>
+				</header>
+				<div class="container">
+					<div class="12u">
+<h2>FACE API: POST request</h2>
+<p>1. Request URL - https://[location].api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes]
+</p>
+<p>2. Request Parameters
+<ul>
+<li>returnFaceId (optional): boolean: Return faceID of detected faces or not</li>
+<li>returnFaceLandmarks (optional):  boolean: return face landmarks of faces or not<br/>
+Ex: dimensions of pupil, mouth, eyebrow, etc.</li>
+<li>returnFaceAttributes (optional): string: analyze and return the specified face attributes<br/>
+Options: age, gender, headPos, smile, facialHair, glasses, emotion, hair, makeup, occlusion, accessories, blur, exposure and noise</li>
+</ul>
+</p>
+<p>3. Request Headers
+<ul>
+<li>Content-Type (optional): Type of media being sent - Ex: application/json</li>
+<li>Ocp-Apim-Subscription-Key: (Your unique subscription key)</li>
+</ul></p>
+<p>4. Request Body - URL or raw image binary to be analyzed by the API<br/>
+Ex: {"url": "http://www.lolitas.se/wp-content/uploads/2009/03/text5.jpg"}</p>
+	<h2>Example of a complete POST request</h2>	
+	<script async src="http://jsfiddle.net/sanatauqir/eLp5dwov/1/embed/js/"></script>
+<p>A successful REST response will look like this:<br/><img src="images/face-api-1.jpg"><br/><img src="images/face-api-2.jpg"></p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; 2017 Sana Tauqir. All rights reserved.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
