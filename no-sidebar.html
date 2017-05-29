@@ -39,73 +39,19 @@
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Walkthrough - Analyze HandWritten Text</h2>
+					<h2>Getting Started</h2>
 				</header>
 				<div class="container">
 					<div class="12u">
 						<script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-            "visualFeatures": "Categories,Description,Color",
-            "details": "",
-            "language": "en",
-        };
-
-        $.ajax({
-            // NOTE: You must use the same location in your REST call as you used to obtain your subscription keys.
-            //   For example, if you obtained your subscription keys from westus, replace "westcentralus" in the 
-            //   URL below with "westus".
-            url: "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze?" + $.param(params),
-
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Content-Type","application/json");
-
-                // NOTE: Replace the "Ocp-Apim-Subscription-Key" value with a valid subscription key.
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "d14d62028f1a4db6b359af25c549ebd5");
-            },
-
-            type: "POST",
-
-            // Request body
-            data: '{"url": "https://www.wassonnursery.com/wp-content/uploads/2016/07/FruitTrees.jpg"}',
-        })
-
-        .done(function(data) {
-            // Show formatted JSON on webpage.
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
-        })
-
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
-            var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-            errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
-            alert(errorString);
-        });
-    });
-</script>
-<h2>How to create a GET request</h2>
-<p>1. Request URL - https://[location].api.cognitive.microsoft.com/vision/v1.0/textOperations/{operationId}</p>
-<p>2. Request Parameters
-<ul>
-<li>operationId: Type of media being sent - Ex: application/json</li>
-<li>Ocp-Apim-Subscription-Key: (Your unique subscription key)</li>
-</ul></p>
-<p>3. Request Headers
-<ul>
-<li>visualFeatures (optional): Which visual feature types to return<br/> <img src="images/visual-features.jpg"></li>
-<li>details (optional): Which domain-specific details to return. Currently the options are celebrities and/or landmarks</li>
-<li>language (optional): Which language to return. Currently the options are en for English or zh for Chinese.</li>
-</ul>
-</p>
-<p>4. Request Body - URL or raw image binary to be analyzed by the API<br/>
-Ex: {"url": "https://www.wassonnursery.com/wp-content/uploads/2016/07/FruitTrees.jpg"}</p>
-	<h2>Example of a complete POST request</h2>
-	<script async src="http://jsfiddle.net/sanatauqir/ub87Ldfw/3/embed/js/dark/"></script>
-	<p>	REST response:</p>
-<br><br>
-<textarea id="responseTextArea" class="UIInput" cols="120" rows="32"></textarea>
+    						<h2>Step 1: Get a Subscription Key</h2><p>
+							Go to the Microsoft Subscriptions Page for this API <a href="https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/" target="_blank">https://azure.microsoft.com/en-us/try/cognitive-services/</a> to get a unique subscription Key<br/>
+							You will be asked to sign in using your Facebook, GitHub, Google or LinkedIn Accounts and you will be asked to authorizer permission to azure.microsoft.com
+							<br/>
+							<img src="images/cv-create-key.jpg"></p>
+						<h2>Step 2: Make Call to Computer Vision API</h2>
+							<p>You will interact with this API using GET AND POST request and be sure to keep track of your unique Subscription ID</p>
+							<p>Step-by-Step exmaples of these can be found on the Walkthrough pages</p>
 					</div>
 				</div>
 			</section>
