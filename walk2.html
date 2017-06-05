@@ -83,31 +83,232 @@ Ex: {"url": "http://www.lolitas.se/wp-content/uploads/2009/03/text5.jpg"}</p>
 </p>
 	<h2>Example of a complete GET request</h2>
 	<script async src="http://jsfiddle.net/sanatauqir/6u9fqs02/1/embed/js/"></script>
-	<script type="text/javascript">
-    $(function() {
-        $.ajax({
-            url: "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/textOperations/59dfe560-fb2d-4e31-ac5f-8831584b911b",
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d14d62028f1a4db6b359af25c549ebd5");
-            },
-            type: "GET",
-        })
-        .done(function(data) {
-            // Show formatted JSON on webpage.
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
-        })
-
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
-            var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-            errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
-            alert(errorString);
-        });
-    });
-</script>
 	<p>	REST response:</p>
-<textarea id="responseTextArea" class="UIInput" cols="120" rows="32"></textarea>
+{
+  "status": "Succeeded",<br/>
+  "recognitionResult": {
+    "lines": [<br/>
+      {
+        "boundingBox": [
+          147,
+          163,
+          420,
+          153,
+          422,
+          194,
+          149,
+          204
+        ],
+        "text": "look better when",<br/>
+        "words": [
+          {
+            "boundingBox": [
+              147,
+              166,
+              217,
+              162,
+              221,
+              205,
+              151,
+              209
+            ],
+            "text": "look"
+          },<br/>
+          {
+            "boundingBox": [
+              235,
+              161,
+              334,
+              154,
+              338,
+              197,
+              239,
+              204
+            ],
+            "text": "better"
+          },<br/>
+          {
+            "boundingBox": [
+              336,
+              154,
+              438,
+              148,
+              442,
+              191,
+              341,
+              197
+            ],
+            "text": "when"
+          }
+        ]
+      },<br/>
+      {
+        "boundingBox": [
+          153,
+          106,
+          381,
+          98,
+          383,
+          145,
+          154,
+          154
+        ],
+        "text": "most things",<br/>
+        "words": [
+          {
+            "boundingBox": [
+              153,
+              107,
+              233,
+              104,
+              235,
+              153,
+              155,
+              156
+            ],
+            "text": "most"
+          },<br/>
+          {
+            "boundingBox": [
+              245,
+              104,
+              401,
+              98,
+              403,
+              147,
+              247,
+              153
+            ],
+            "text": "things"
+          }
+        ]
+      },<br/>
+      {
+        "boundingBox": [
+          159,
+          234,
+          407,
+          205,
+          413,
+          256,
+          165,
+          284
+        ],
+        "text": "you put them",<br/>
+        "words": [
+          {
+            "boundingBox": [
+              158,
+              231,
+              216,
+              225,
+              225,
+              279,
+              167,
+              284
+            ],
+            "text": "you"
+          },<br/>
+          {
+            "boundingBox": [
+              231,
+              224,
+              306,
+              217,
+              315,
+              270,
+              240,
+              277
+            ],
+            "text": "put"
+          },<br/>
+          {
+            "boundingBox": [
+              318,
+              216,
+              428,
+              205,
+              437,
+              258,
+              327,
+              269
+            ],
+            "text": "them"
+          }
+        ]
+      },<br/>
+      {
+        "boundingBox": [
+          177,
+          295,
+          254,
+          287,
+          256,
+          307,
+          179,
+          315
+        ],
+        "text": "In a",<br/>
+        "words": [
+          {
+            "boundingBox": [
+              175,
+              296,
+              205,
+              292,
+              211,
+              313,
+              181,
+              317
+            ],
+            "text": "In"
+          },<br/>
+          {
+            "boundingBox": [
+              220,
+              290,
+              266,
+              284,
+              271,
+              306,
+              225,
+              312
+            ],
+            "text": "a"
+          }
+        ]
+      },<br/>
+      {
+        "boundingBox": [
+          302,
+          272,
+          414,
+          267,
+          415,
+          294,
+          303,
+          298
+        ],
+        "text": "circle",<br/>
+        "words": [
+          {
+            "boundingBox": [
+              282,
+              279,
+              433,
+              265,
+              437,
+              292,
+              287,
+              306
+            ],
+            "text": "circle"
+          }
+        ]
+      }
+    ]
+  }
+}
 					</div>
 				</div>
 			</section>
